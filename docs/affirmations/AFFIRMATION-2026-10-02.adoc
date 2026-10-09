@@ -1,9 +1,8 @@
 // SPDX-License-Identifier: CC-BY-SA-4.0
 // SPDX-FileCopyrightText: 2026 Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
-= AFFIRMATION — ZenodoDeposits.jl, as of 2026-10-07T10:26:55Z
+= AFFIRMATION — ZenodoDeposits.jl, as of 2026-10-02T15:15:02Z
 :toc: macro
 :toclevels: 2
-:status: DRAFT — agent-authored, NOT affirmed by the owner until the owner's signed commit lands it
 
 _the No-Bullshit file: what we affirm was true and checkable at this moment._
 
@@ -66,8 +65,7 @@ file. Bring a counter-example, a failing run, or a contradicting source.
 |===
 | Claim | Status | Evidence (command / `file:line`)
 
-| The test suite passes: 377 pass, 0 fail, 0 error, 1 broken. The broken one is the live sandbox test
-  (below), which `@test_skip` reports as Broken.
+| The test suite passes: 377 pass, 0 fail, 0 error, 1 skipped (the live sandbox test, below).
   This includes the Aqua and JET checks.
 | affirmed
 | `julia --project=. -e 'using Pkg; Pkg.instantiate(); Pkg.test()'` (`just test`) at the anchor SHA, Julia 1.12.6;
@@ -115,16 +113,11 @@ file. Bring a counter-example, a failing run, or a contradicting source.
   `proofs/agda/CORRESPONDENCE.adoc`; HTTP, the filesystem and crash timing are
   outside the model.
 * *Not yet registered* in the Julia General registry, and not tagged.
-  `General/Z/ZenodoDeposits/Package.toml` returns 404 (the same probe for
-  `HTTP` returns 200), and `git ls-remote --tags origin` lists no tags.
 * *Estate CI checks still red at the anchor* are tracked on
-  https://github.com/metadatastician/ZenodoDeposits.jl/issues/3[#3]. Two
-  check runs on the anchor SHA conclude `failure`: `Julia nightly (allowed to
-  fail)` and `SonarQube`. SonarQube fails because the repository has no
-  `SONAR_TOKEN` secret, so it says nothing about code quality. The mirror jobs,
-  the OSSF Scorecard PR job, the two governance ratchets and `Email on push`
-  are `skipped`, which is evidence of nothing. None of these is part of the
-  package's own test or proof run.
+  https://github.com/metadatastician/ZenodoDeposits.jl/issues/3[#3]
+  (lint-workflows, estate-audit, UUID v7 conformance, Julia nightly, OSSF
+  Scorecard, SonarQube). None of these is part of the package's own test or
+  proof run.
 * *Toolchain breadth.* Tests were run on Julia 1.12.6 only, on Debian 13
   (WSL2); other versions inside the `[compat]` range (`julia = "1.10"`) are
   covered by CI, not by this affirmation.
@@ -136,34 +129,16 @@ file. Bring a counter-example, a failing run, or a contradicting source.
 |===
 | Project | ZenodoDeposits.jl
 | Repository | https://github.com/metadatastician/ZenodoDeposits.jl
-| Commit (SHA) | 796971f0adf64a60a0b64fc22849531ac1a53722 (the code checked; the commit that lands this file changes only this file and moves the previous one to `docs/affirmations/`)
+| Commit (SHA) | a68b5852d149fea33739d791ab296791c228e66f (the code checked; the commit that lands this file changes only this file)
 | Branch | main
-| Timestamp (UTC) | 2026-10-07T10:26:55Z
+| Timestamp (UTC) | 2026-10-02T15:15:02Z
 | Toolchain | Julia 1.12.6; Agda 2.6.4.3 with agda-stdlib 2.1 (Debian trixie packages); Debian 13 (WSL2)
-| Affirmed by | Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk> (attestation pending: given by the owner's signed commit that lands this file)
+| Affirmed by | Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
 |===
-
-== Changes since the previous affirmation
-
-The previous affirmation (anchor `a68b5852`, 2026-10-02) is kept unchanged at
-link:docs/affirmations/AFFIRMATION-2026-10-02.adoc[]. Between the two anchors,
-`git diff --stat a68b5852 796971f0 -- src test proofs Project.toml bin` shows
-two one-line changes, and no change under `src/`:
-
-* `Project.toml`: the package UUID was re-minted as a UUIDv8
-  (`01a0fd25-08dc-85f2-9446-d9ab13218ca1`), per the estate's UUIDv8 ruling.
-  *The UUID quoted anywhere from the earlier affirmation is superseded.*
-* `test/runtests.jl:508`: a UUID literal in the bucket-host refusal test
-  changed version nibble (`4` to `7`). The assertion is unchanged.
-
-The other changed files are documentation, workflow configuration and the
-removal of retired `.a2ml` metadata. Three earlier "red" items (lint-workflows,
-estate-audit, UUID conformance) conclude `success` at the anchor.
 
 _The affirmation is carried by the owner-signed commit at the head of the pull
 request that adds this file, whose parent is the anchor SHA above and which
-changes no code: it adds this file and moves the previous affirmation to
-`docs/affirmations/`. The repository merges by squash, so the
+changes no file other than this one. The repository merges by squash, so the
 commit on `main` is signed by GitHub, not by the owner; verify the owner's
 signature on the pull request's head commit (`git log --show-signature`, or
 GitHub's Verified badge on that commit)._

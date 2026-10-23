@@ -9,7 +9,7 @@ workflows:
     '.github/workflows/documentation.yml':
         - 'actions/checkout@v7.0.1'
         - 'julia-actions/cache@v3.5.0'
-        - 'julia-actions/setup-julia@v3.0.2'
+        - 'julia-actions/setup-julia@v3.0.3'
     '.github/workflows/dogfood-gate.yml':
         - 'actions/checkout@v7.0.1'
     '.github/workflows/estate-rules.yml':
@@ -21,7 +21,7 @@ workflows:
     '.github/workflows/julia-test.yml':
         - 'actions/checkout@v7.0.1'
         - 'julia-actions/cache@v3.5.0'
-        - 'julia-actions/setup-julia@v3.0.2'
+        - 'julia-actions/setup-julia@v3.0.3'
     '.github/workflows/label-triage.yml': []
     '.github/workflows/labels.yml': []
     '.github/workflows/mirror.yml': []
@@ -131,9 +131,9 @@ dependencies:
         commit: 'sha1-9353db09a0f2bbbdec6f41791918c75d37391b36'
         owner_id: 53965732
         repo_id: 441908600
-    'julia-actions/setup-julia@v3.0.2':
-        ref: 'v3.0.2'
-        commit: 'sha1-fa02766e078afaaf09b14210362cee14137e6a32'
+    'julia-actions/setup-julia@v3.0.3':
+        ref: 'v3.0.3'
+        commit: 'sha1-da908477b5db94c10ffce8cfea9f2b3b9d5db687'
         owner_id: 53965732
         repo_id: 202020219
     'peter-evans/repository-dispatch@v4.0.1':

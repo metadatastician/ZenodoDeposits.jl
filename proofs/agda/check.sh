@@ -31,9 +31,9 @@ main() {
   "$agda" --version
   rm -rf "$here/_build"
   cd "$here"
-  "$agda" --library-file="$here/libraries" --no-default-libraries ZenodoDeposits/Journal.agda
+  "$agda" --safe --without-K --cubical-compatible --library-file="$here/libraries" --no-default-libraries ZenodoDeposits/Journal.agda
   ! grep -RIn 'postulate' --include='*.agda' "$here/ZenodoDeposits" || die "postulate found"
-  echo "check.sh: ZenodoDeposits.Journal typechecks (--safe --without-K, no postulates)"
+  echo "check.sh: ZenodoDeposits.Journal typechecks (--safe --without-K --cubical-compatible, no postulates)"
 }
 
 main "$@"

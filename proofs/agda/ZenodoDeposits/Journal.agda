@@ -17,7 +17,7 @@
 -- change to the Julia table that breaks a property makes this file fail to
 -- typecheck.
 
-{-# OPTIONS --safe --without-K #-}
+{-# OPTIONS --safe --without-K --cubical-compatible #-}
 module ZenodoDeposits.Journal where
 
 open import Data.Bool.Base using (Bool; true; false; T; _∧_)

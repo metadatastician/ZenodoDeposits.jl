@@ -9,7 +9,11 @@ set -euo pipefail
 
 # Agda prints non-ASCII identifiers in its warnings; a POSIX locale makes it
 # die with "commitBuffer: invalid argument" (exit 42) instead of reporting.
-export LC_ALL=C.UTF-8
+# Keep the caller's locale when it is already UTF-8; fall back to C.UTF-8.
+case "${LC_ALL:-${LC_CTYPE:-${LANG:-}}}" in
+  *[Uu][Tt][Ff]-8* | *[Uu][Tt][Ff]8*) ;;
+  *) export LC_ALL=C.UTF-8 ;;
+esac
 
 # Print an error and exit non-zero.
 die() {

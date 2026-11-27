@@ -11,7 +11,8 @@ model maps onto the Julia code is described in link:CORRESPONDENCE.adoc[].
 * Agda 2.6.4.3 with agda-stdlib 2.1. These are Debian trixie's `agda` and
   `agda-stdlib` packages, and CI uses them. Agda 2.7.0.1 with stdlib 2.1 also
   typechecks the files.
-* Flags: `--safe --without-K`, set in `zenodo-deposits.agda-lib`. There are
+* Flags: `--safe --without-K --cubical-compatible`, set in
+  `zenodo-deposits.agda-lib` and passed explicitly by `check.sh`. There are
   no postulates.
 
 == Commands

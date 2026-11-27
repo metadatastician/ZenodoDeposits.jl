@@ -30,7 +30,7 @@ call `reconcile!`.
 `proofs/agda/ZenodoDeposits/Transitions.agda` is generated from
 [`TRANSITIONS`](@ref) by `julia --project proofs/agda/generate.jl`, and the
 test suite fails if the committed file is stale. In
-`proofs/agda/ZenodoDeposits/Journal.agda`, checked with `--safe --without-K`
+`proofs/agda/ZenodoDeposits/Journal.agda`, checked with `--safe --without-K --cubical-compatible`
 and no postulates:
 
 - `at-most-one-publish`: no trace from any state contains two publish

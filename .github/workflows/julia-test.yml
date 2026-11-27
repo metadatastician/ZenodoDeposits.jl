@@ -73,7 +73,7 @@ jobs:
 
   agda-proofs:
     # Typechecks proofs/agda (journal state-machine safety) with the Debian
-    # trixie toolchain: Agda 2.6.4.3 + agda-stdlib 2.1, --safe --without-K.
+    # trixie toolchain: Agda 2.6.4.3 + agda-stdlib 2.1, --safe --without-K --cubical-compatible.
     # The Julia `test` job separately fails if Transitions.agda is stale.
     name: Agda proofs (2.6.4.3, stdlib 2.1)
     runs-on: ubuntu-latest
